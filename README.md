@@ -1,5 +1,5 @@
 # subtitle-renamer
-Reads all video files and subtitle files in folder and rename the subtitles based on the video
+Simple python script that reads all video files and subtitle files in a folder and rename the subtitles based on the video files.
 
 The script runs in the folder the file is at, if you want to specify the folder where the subs and video files are change the 'file_path' variable.
 
