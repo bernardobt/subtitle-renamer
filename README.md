@@ -1,8 +1,8 @@
 # subtitle-renamer
 Simple python script that reads all video files and subtitle files in a folder and rename the subtitles based on the video files.
 
-The script runs in the folder the file is at. If you want to specify the folder where the subs and video files are, change the 'file_path' variable.
+Set the folder where the videos and subs are in the Folder text box.
 
-Set 'vid_ext' = "mkv" from mkv to your video files extension.
+Set Video and Subs extentions in the respective fields.
 
-Set 'sub_ext' = "srt" from srt to your subtitle files extension.
+NOTE: The number of videos and subs files must be the same.
