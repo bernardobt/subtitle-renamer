@@ -11,9 +11,6 @@ class Renamer_ui(QtWidgets.QMainWindow):
         self.installed_folder_path = os.getcwd()
         self.lineEdit_folder.setText(self.installed_folder_path)
 
-        self.vid_ext = self.lineEdit_video_format.text()
-        self.sub_ext = self.lineEdit_subs_format.text()
-
         self.ui.pushButton_detect.clicked.connect(self.get_file_list)
         self.show()
 
@@ -26,10 +23,10 @@ class Renamer_ui(QtWidgets.QMainWindow):
         subs_arr = []
         arr = os.listdir(self.lineEdit_folder.text())
         for i, name in enumerate(arr):
-            if name.endswith('.' + self.vid_ext):
+            if name.endswith('.' + self.lineEdit_video_format.text()):
                 vid_arr.append(name)
                 self.plainTextEdit_video_list.appendPlainText(name)
-            elif name.endswith('.' + self.sub_ext):
+            elif name.endswith('.' + self.lineEdit_subs_format.text()):
                 subs_arr.append(name)
                 self.plainTextEdit_subs_list.appendPlainText(name)
         self.label_info.setText(f'Finished reading files')
