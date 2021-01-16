@@ -39,7 +39,7 @@ class Renamer_ui(QtWidgets.QMainWindow):
         if len(lists[0]) == len(lists[1]):
             self.label_info.setText(f'Renaming files')
             for counter, item in enumerate(lists[0]):
-                new = re.sub(f"{self.vid_ext}", f"{self.sub_ext}", item)
+                new = re.sub(f"{self.lineEdit_video_format.text()}", f"{self.lineEdit_subs_format.text()}", item)
                 os.rename((self.lineEdit_folder.text() + '\\' + lists[1][counter]), (self.lineEdit_folder.text() + '\\' + new))
             self.get_file_list()
             self.pushButton_rename.setEnabled(False)
