@@ -1,5 +1,9 @@
-from PyQt5 import QtCore, QtGui, QtWidgets, uic
-import sys, os, re
+import os
+import re
+import sys
+
+from PyQt5 import QtWidgets, uic
+from natsort import natsorted
 
 
 class Renamer_ui(QtWidgets.QMainWindow):
@@ -30,7 +34,7 @@ class Renamer_ui(QtWidgets.QMainWindow):
                 subs_arr.append(name)
                 self.plainTextEdit_subs_list.appendPlainText(name)
         self.label_info.setText(f'Finished reading files')
-        self.lists = vid_arr, subs_arr
+        self.lists = natsorted(vid_arr), natsorted(subs_arr)
         self.pushButton_rename.setEnabled(True)
         self.pushButton_rename.clicked.connect(
             lambda ch: self.rename_files(self.lists))
